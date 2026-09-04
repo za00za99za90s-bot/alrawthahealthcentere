@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز الروضة الصحي - محضة، سلطنة عمان | بوابة التوظيف الطبي</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    :root {
+        --primary: #0284c7;
+        --primary-dark: #0369a1;
+        --primary-light: #e0f2fe;
+        --secondary: #0d9488;
+        --secondary-light: #f0fdf4;
+        --accent: #f43f5e;
+        --dark: #090d16;
+        --light: #f8fafc;
+        --gray: #64748b;
+        --border: #e2e8f0;
+        --success: #10b981;
+        --danger: #ef4444;
+        --shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.08);
+        --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Tajawal', sans-serif;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: #f3f6f9;
+        color: var(--dark);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    .top-ticker {
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: #38bdf8;
+        padding: 10px 0;
+        font-size: 13px;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    header {
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 14px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .brand-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 22px;
+        box-shadow: 0 6px 15px rgba(2,132,199,0.25);
+        flex-shrink: 0;
+    }
+
+    .brand-text h1 {
+        font-size: 19px;
+        font-weight: 800;
+        color: var(--dark);
+        letter-spacing: -0.5px;
+    }
+
+    .brand-text p {
+        font-size: 11px;
+        color: var(--gray);
+        font-weight: 600;
+    }
+
+    .contact-badge {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--secondary-light);
+        color: var(--secondary);
+        padding: 8px 18px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 14px;
+        border: 1px solid #bbf7d0;
+    }
+
+    .hero {
+        background:
+            linear-gradient(135deg, rgba(9,13,22,0.88), rgba(3,105,161,0.82)),
+            url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80')
+            no-repeat center center/cover;
+        color: white;
+        padding: 110px 20px 140px;
+        text-align: center;
+        position: relative;
+    }
+
+    .hero-inner {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255,255,255,0.12);
+        backdrop-filter: blur(10px);
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero h2 {
+        font-size: 42px;
+        font-weight: 900;
+        margin-bottom: 20px;
+        line-height: 1.25;
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 17px;
+        margin-bottom: 35px;
+        color: #cbd5e1;
+        line-height: 1.8;
+    }
+
+    .hero-cta {
+        background: linear-gradient(135deg, var(--secondary), #0f766e);
+        color: white;
+        padding: 16px 36px;
+        border-radius: 14px;
+        font-size: 16px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 10px 25px rgba(13,148,136,0.35);
+        transition: var(--transition);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-cta:hover {
+        transform: translateY(-3px);
+    }
+
+    .wrapper {
+        max-width: 1250px;
+        margin: -60px auto 60px;
+        position: relative;
+        z-index: 10;
+        padding: 0 20px;
+    }
+
+    .panel,
+    .wizard-container {
+        background: white;
+        border-radius: 24px;
+        padding: 45px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+        border: 1px solid var(--border);
+    }
+
+    .panel {
+        margin-bottom: 35px;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    .section-header h3 {
+        font-size: 28px;
+        color: var(--dark);
+        font-weight: 800;
+        margin-bottom: 8px;
+    }
+
+    .section-header p {
+        color: var(--gray);
+        font-size: 15px;
+    }
+
+    .grid-layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .info-box {
+        background: #fafafa;
+        border-radius: 18px;
+        padding: 30px;
+        border: 1px solid var(--border);
+        border-top: 4px solid var(--primary);
+        transition: var(--transition);
+    }
+
+    .info-box:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
+    }
+
+    .info-box.alt {
+        border-top-color: var(--secondary);
+    }
+
+    .info-box.accent {
+        border-top-color: var(--accent);
+    }
+
+    .info-box h4 {
+        color: var(--dark);
+        font-size: 18px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+    }
+
+    .info-box h4 i {
+        color: var(--primary);
+    }
+
+    .info-box.alt h4 i {
+        color: var(--secondary);
+    }
+
+    .info-box.accent h4 i {
+        color: var(--accent);
+    }
+
+    .info-list {
+        list-style: none;
+    }
+
+    .info-list li {
+        padding: 9px 0;
+        font-size: 14px;
+        color: var(--gray);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px dashed var(--border);
+    }
+
+    .info-list li:last-child {
+        border-bottom: none;
+    }
+
+    .info-list li span {
+        font-weight: 700;
+        color: var(--dark);
+        background: #f1f5f9;
+        padding: 3px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    footer {
+        background: var(--dark);
+        color: white;
+        padding: 50px 20px 25px;
+        text-align: center;
+    }
+
+    .footer-wrap {
+        max-width: 1200px;
+        margin: 0 auto 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        padding-bottom: 30px;
+    }
+
+    .footer-details {
+        display: flex;
+        gap: 35px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 15px;
+        color: #94a3b8;
+    }
+
+    .footer-details div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .copyright-text {
+        font-size: 13px;
+        color: #64748b;
+    }
+
+    @media (max-width: 768px) {
+        .navbar {
+            padding: 12px 15px;
+        }
+
+        .contact-badge {
+            padding: 8px 10px;
+            font-size: 12px;
+        }
+
+        .contact-badge span {
+            display: none;
+        }
+
+        .hero {
+            padding: 80px 20px 120px;
+        }
+
+        .hero h2 {
+            font-size: 31px;
+        }
+
+        .hero p {
+            font-size: 15px;
+        }
+
+        .panel,
+        .wizard-container {
+            padding: 25px 18px;
+        }
+    }
+</style>
+
+</head>
+<body>
+
+<div class="top-ticker">
+    <marquee behavior="scroll" direction="right" scrollamount="4">
+        ✨ إعلان توظيف صادر عن إدارة "مركز الروضة الصحي" بولاية محضة، سلطنة عمان | فتح باب التقديم للكوادر الطبية اليمنية المؤهلة | سارع بالتقديم الآن ✨
+    </marquee>
+</div>
+
+<header>
+    <div class="navbar">
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-hospital-user"></i>
+            </div>
+            <div class="brand-text">
+                <h1>مركز الروضة الصحي</h1>
+                <p>محضة - سلطنة عمان</p>
+            </div>
+        </div>
+        <div class="contact-badge">
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>+968 25665301</span>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-badge">
+            <i class="fa-solid fa-shield-halved"></i>
+            بوابة التوظيف
+        </div>
+        <h2>
+            فرص عمل للكوادر الطبية اليمنية بسلطنة عمان
+        </h2>
+        <p>
+            انضم إلى فريق العمل في مركز الروضة الصحي بولاية محضة.
+            يرجى تعبئة نموذج التقديم وإرفاق السيرة الذاتية بصيغة PDF.
+        </p>
+        <a href="#apply-section" class="hero-cta">
+            ابدأ تقديم طلب التوظيف
+            <i class="fa-solid fa-arrow-down"></i>
+        </a>
+    </div>
+</section>
+
+<div class="wrapper">
+    <div class="panel">
+        <div class="section-header">
+            <h3>
+                دليل الشواغر والرواتب والمميزات
+            </h3>
+            <p>
+                تفاصيل التخصصات المطلوبة والرواتب الشهرية والمزايا الوظيفية
+            </p>
+        </div>
+
+        <div class="grid-layout">
+            <div class="info-box">
+                <h4>
+                    <i class="fa-solid fa-user-doctor"></i>
+                    الشواغر الطبية المطلوبة
+                </h4>
+                <ul class="info-list">
+                    <li>طبيب عام / طبيبة عامة <span>2 + 2</span></li>
+                    <li>ممرض / ممرضة طوارئ <span>4 + 4</span></li>
+                    <li>ممرض / ممرضة عناية مركزة <span>4 + 4</span></li>
+                    <li>أخصائي / أخصائية مختبر <span>3 + 3</span></li>
+                    <li>صيادلة <span>3</span></li>
+                    <li>فني / فنية أشعة <span>2</span></li>
+                    <li>قابلة قانونية <span>3</span></li>
+                </ul>
+            </div>
+
+            <div class="info-box alt">
+                <h4>
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                    الرواتب
+                </h4>
+                <ul class="info-list">
+                    <li>الأطباء <span>1,850 ر.ع</span></li>
+                    <li>التمريض <span>850 ر.ع</span></li>
+                    <li>القابلة القانونية <span>800 ر.ع</span></li>
+                    <li>المختبرات الطبية <span>750 ر.ع</span></li>
+                    <li>الأشعة <span>650 ر.ع</span></li>
+                    <li>الصيدلة <span>650 ر.ع</span></li>
+                </ul>
+            </div>
+
+            <div class="info-box accent">
+                <h4>
+                    <i class="fa-solid fa-circle-check"></i>
+                    المميزات والشروط
+                </h4>
+                <ul class="info-list">
+                    <li>عقد عمل <span>متوفر</span></li>
+                    <li>تأشيرة عمل <span>متوفر</span></li>
+                    <li>السكن <span>متوفر</span></li>
+                    <li>الإجازة السنوية <span>شهر / سنة</span></li>
+                    <li>الجنسية المطلوبة <span>يمني</span></li>
+                    <li>الترخيص المهني <span>ساري</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- نموذج التوظيف المستقل -->
+    <div class="wizard-container" id="apply-section">
+        <div class="section-header">
+            <h3>
+                نموذج طلب التوظيف الإلكتروني
+            </h3>
+            <p>
+                يرجى استكمال جميع البيانات بدقة وإرفاق المستندات المطلوبة
+            </p>
+        </div>
+
+        <form id="jobApplicationForm">
+            
+            <!-- الصفحة الأولى (Page 1) -->
+            <div class="form-step" id="step-1">
+                <h4 style="margin-bottom: 20px; color: var(--primary);">الخطوة 1 من 3: البيانات الأساسية</h4>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:700;">الاسم الكامل *</label>
+                    <input type="text" name="full_name" required placeholder="مثل: زيد محمد احمد خالد" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:10px; font-family:'Tajawal';">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:700;">الجنسية *</label>
+                    <select name="nationality" required style="width:100%; padding:12px; border:1px solid var(--border); border-radius:10px; font-family:'Tajawal'; background:white;">
+                        <option value="يمني">يمني</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:700;">المسمى الوظيفي *</label>
+                    <select name="job_title" required style="width:100%; padding:12px; border:1px solid var(--border); border-radius:10px; font-family:'Tajawal'; background:white;">
+                        <option value="">اختر المسمى الوظيفي</option>
+                        <option value="طبيب/طبيبة عامة">طبيب/طبيبة عامة</option>
+                        <option value="ممرض/ممرضة عناية مركزة">ممرض/ممرضة عناية مركزة</option>
+                        <option value="ممرض/ممرضة طوارئ">ممرض/ممرضة طوارئ</option>
+                        <option value="قابلة">قابلة</option>
+                        <option value="أخصائي/أخصائية مختبر">أخصائي/أخصائية مختبر</option>
+                        <option value="صيدلي/صيدلانية">صيدلي/صيدلانية</option>
+                        <option value="أخصائي/أخصائية اشعة">أخصائي/أخصائية اشعة</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:700;">اسم الجامعة *</label>
+                    <input type="text" name="university_name" required placeholder="مثل: جامعة عدن" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:10px; font-family:'Tajawal';">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:700;">رقم الترخيص الطبي *</label>
+                    <input type="text" name="medical_license" required placeholder="أدخل رقم الترخيص" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:10px; font-family:'Tajawal';">
+                </div>
+
+                <div style="text-align: left;">
+                    <button type="button" class="next-btn" onclick="nextStep(1)" style="background:var(--primary); color:white; padding:12px 25px; border:none; border-radius:10px; font-weight:700; cursor:pointer;">التالي ←</button>
+                </div>
+            </div>
+
+            <!-- الصفحة الثانية (Page 2) -->
+            <div class="form-step" id="step-2" style="display:none;">
+                <h4 style="margin-bottom: 20px; color: var(--primary);">الخطوة 2 من 3: الخبرات وتفاصيل التواصل</h4>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:700;">سنوات الخبرة *</label>
+                    <input type="number" name="experience_years" required placeholder="عدد سنوات الخبرة" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:10px; font-family:'Tajawal';">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:700;">حالة جواز السفر *</label>
+                    <select name="passport_status" required style="width:100%; padding:12px; border:1px solid var(--border); border-radius:10px; font-family:'Tajawal'; background:white;">
+                        <option value="">اختر حالة جواز السفر</option>
+                        <option value="لدي جواز سفر ساري المفعول">لدي جواز سفر ساري المفعول</option>
+                        <option value="اتعهد باستخراج جواز سفر خلال مدة لاتزيد عن شهرين من اجتياز الامتحان الكتابي">اتعهد باستخراج جواز سفر خلال مدة لاتزيد عن شهرين من اجتياز الامتحان الكتابي</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:700;">البريد الالكتروني *</label>
+                    <input type="email" name="email" required placeholder="name@example.com" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:10px; font-family:'Tajawal';">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:700;">رقم واتس اب *</label>
+                    <input type="tel" name="whatsapp" required placeholder="+967..." style="width:100%; padding:12px; border:1px solid var(--border); border-radius:10px; font-family:'Tajawal';">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:700;">مكان الامتحان الكتابي المرغوب *</label>
+                    <select name="exam_location" required style="width:100%; padding:12px; border:1px solid var(--border); border-radius:10px; font-family:'Tajawal'; background:white;">
+                        <option value="">اختر المدينة</option>
+                        <option value="عدن">عدن</option>
+                        <option value="صنعاء">صنعاء</option>
+                    </select>
+                </div>
+
+                <div style="display: flex; justify-content: space-between;">
+                    <button type="button" class="prev-btn" onclick="prevStep(2)" style="background:var(--gray); color:white; padding:12px 25px; border:none; border-radius:10px; font-weight:700; cursor:pointer;">→ السابق</button>
+                    <button type="button" class="next-btn" onclick="nextStep(2)" style="background:var(--primary); color:white; padding:12px 25px; border:none; border-radius:10px; font-weight:700; cursor:pointer;">التالي ←</button>
+                </div>
+            </div>
+
+            <!-- الصفحة الثالثة (Page 3) -->
+            <div class="form-step" id="step-3" style="display:none;">
+                <h4 style="margin-bottom: 20px; color: var(--primary);">الخطوة 3 من 3: المستندات والمرفقات</h4>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:700;">الشهادة الجامعية (PDF) *</label>
+                    <input type="file" id="degree_file" accept=".pdf" required style="width:100%; padding:10px; border:1px dashed var(--border); border-radius:10px; background:#fafafa;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:700;">السيرة الذاتية (PDF) *</label>
+                    <input type="file" id="cv_file" accept=".pdf" required style="width:100%; padding:10px; border:1px dashed var(--border); border-radius:10px; background:#fafafa;">
+                </div>
+
+                <div style="display: flex; justify-content: space-between;">
+                    <button type="button" class="prev-btn" onclick="prevStep(3)" style="background:var(--gray); color:white; padding:12px 25px; border:none; border-radius:10px; font-weight:700; cursor:pointer;">→ السابق</button>
+                    <button type="submit" id="submitBtn" style="background:var(--secondary); color:white; padding:12px 35px; border:none; border-radius:10px; font-weight:700; cursor:pointer;">إرسال الطلب</button>
+                </div>
+            </div>
+
+            <div id="formMessage" style="margin-top: 20px; text-align: center; font-weight: bold;"></div>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-wrap">
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-hospital-user"></i>
+            </div>
+            <div class="brand-text">
+                <h1 style="color:white;">مركز الروضة الصحي</h1>
+                <p style="color:#94a3b8;">ولاية محضة - سلطنة عمان</p>
+            </div>
+        </div>
+        <div class="footer-details">
+            <div>
+                <i class="fa-solid fa-location-dot" style="color:var(--primary);"></i>
+                محضة، سلطنة عمان
+            </div>
+            <div>
+                <i class="fa-solid fa-phone" style="color:var(--secondary);"></i>
+                هاتف المركز: +96825665301
+            </div>
+        </div>
+    </div>
+    <p class="copyright-text">
+        جميع الحقوق محفوظة © 2026 مركز الروضة الصحي
+    </p>
+</footer>
+
+<script>
+    document.getElementById('step-1').style.display = 'block';
+
+    function nextStep(current) {
+        const currentStepEl = document.getElementById(`step-${current}`);
+        const inputs = currentStepEl.querySelectorAll('input, select');
+        let valid = true;
+        inputs.forEach(input => {
+            if (!input.checkValidity()) {
+                input.reportValidity();
+                valid = false;
+            }
+        });
+        if (valid) {
+            document.getElementById(`step-${current}`).style.display = 'none';
+            document.getElementById(`step-${current + 1}`).style.display = 'block';
+        }
+    }
+
+    function prevStep(current) {
+        document.getElementById(`step-${current}`).style.display = 'none';
+        document.getElementById(`step-${current - 1}`).style.display = 'block';
+    }
+
+    // دالة مساعدة لقراءة الملفات وتحويلها إلى Base64
+    function readFileAsBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result.split(',')[1]);
+            reader.onerror = error => reject(error);
+            reader.readAsDataURL(file);
+        });
+    }
+
+    document.getElementById('jobApplicationForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById('submitBtn');
+        const msg = document.getElementById('formMessage');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'جاري الإرسال...';
+        msg.style.color = 'var(--primary)';
+        msg.textContent = 'جاري معالجة ورفع الملفات إلى جوجل...';
+
+        try {
+            const degreeFileInput = document.getElementById('degree_file');
+            const cvFileInput = document.getElementById('cv_file');
+
+            let degreeBase64 = "";
+            let degreeName = "";
+            if (degreeFileInput.files.length > 0) {
+                degreeName = degreeFileInput.files[0].name;
+                degreeBase64 = await readFileAsBase64(degreeFileInput.files[0]);
+            }
+
+            let cvBase64 = "";
+            let cvName = "";
+            if (cvFileInput.files.length > 0) {
+                cvName = cvFileInput.files[0].name;
+                cvBase64 = await readFileAsBase64(cvFileInput.files[0]);
+            }
+
+            const data = {
+                full_name: document.querySelector('[name="full_name"]').value,
+                nationality: document.querySelector('[name="nationality"]').value,
+                job_title: document.querySelector('[name="job_title"]').value,
+                university_name: document.querySelector('[name="university_name"]').value,
+                medical_license: document.querySelector('[name="medical_license"]').value,
+                experience_years: document.querySelector('[name="experience_years"]').value,
+                passport_status: document.querySelector('[name="passport_status"]').value,
+                email: document.querySelector('[name="email"]').value,
+                whatsapp: document.querySelector('[name="whatsapp"]').value,
+                exam_location: document.querySelector('[name="exam_location"]').value,
+                degree_file_name: degreeName,
+                degree_file_data: degreeBase64,
+                cv_file_name: cvName,
+                cv_file_data: cvBase64
+            };
+
+            // رابط تطبيق جوجل الذي أنشأته
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwBQMBzixB7Szw3RLDZH8vavs3GX2yUjnumqGnsBDoln8WwNNA17XGDMVqQo8RJLAX6cw/exec';
+
+            const response = await fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8',
+                },
+                body: JSON.stringify(data)
+            });
+
+            msg.style.color = 'var(--success)';
+            msg.textContent = 'تم إرسال طلبك بنجاح وتحديث الجدول!';
+            document.getElementById('jobApplicationForm').reset();
+            setTimeout(() => {
+                location.reload();
+            }, 3000);
+
+        } catch (err) {
+            msg.style.color = 'var(--danger)';
+            msg.textContent = 'فشل الإرسال: ' + err.message;
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'إرسال الطلب';
+        }
+    });
+</script>
+
+</body>
+</html>
